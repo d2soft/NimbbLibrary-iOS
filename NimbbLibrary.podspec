@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NimbbLibrary"
-  s.version          = "1.0.0"
+  s.version          = "0.9.0"
   s.summary          = "Easily integrate video recording using Nimbb into your iOS project."
   s.homepage         = "https://github.com/d2soft/NimbbLibrary-iOS"
   s.license          = 'MIT'
@@ -15,9 +15,11 @@ Pod::Spec.new do |s|
   s.library = 'xml2'
   s.xcconfig = { 'HEADER_SEARCH_PATHS' => '/usr/include/libxml2' }
   
-  s.source   = { :http => 'http://www.vibr8soft.com/pod/NimbbLib.framework_1.0.0.zip' }
-  s.source_files = 'NimbbLib.framework/Versions/A/Headers/*.h'
-  s.preserve_paths = 'NimbbLib.framework/*'
+  s.source = {
+    :git => 'https://github.com/d2soft/NimbbLibrary-iOS.git',
+    :tag => s.version.to_s
+  }
+  
   s.frameworks   = 'NimbbLib'
-  s.xcconfig     = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/NimbbLib"' }
+  s.ios.vendored_frameworks = 'NimbbLib.framework'
 end

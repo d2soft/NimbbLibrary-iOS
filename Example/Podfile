@@ -1,1 +1,1 @@
-pod "NimbbLibrary", :path => "../"
+pod "NimbbLibrary", :git => 'https://github.com/d2soft/NimbbLibrary-iOS.git'
