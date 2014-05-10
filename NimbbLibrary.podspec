@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
   }
   
   s.source_files = 'Classes', "Vendor/NimbbLib.framework/Versions/A/Headers/*.h"
-  s.frameworks = 'UIKit'
+  s.frameworks = 'UIKit', 'CoreFoundation', 'MobileCoreServices'
   s.ios.vendored_frameworks = 'Vendor/NimbbLib.framework'
-  s.xcconfig = {'GCC_PREPROCESSOR_DEFINITIONS' => %{$(inherited)}}
 end
