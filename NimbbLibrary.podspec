@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NimbbLibrary"
-  s.version          = "0.9.4"
+  s.version          = "1.0.0"
   s.summary          = "Easily integrate video recording using Nimbb into your iOS project."
   s.homepage         = "https://github.com/d2soft/NimbbLibrary-iOS"
   s.license          = 'MIT'
