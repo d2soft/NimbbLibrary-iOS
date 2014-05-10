@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "NimbbLibrary"
-  s.version          = "0.9.3"
+  s.version          = "0.9.4"
   s.summary          = "Easily integrate video recording using Nimbb into your iOS project."
   s.homepage         = "https://github.com/d2soft/NimbbLibrary-iOS"
   s.license          = 'MIT'
@@ -20,5 +20,8 @@ Pod::Spec.new do |s|
     :tag => s.version.to_s
   }
   
-  s.ios.vendored_frameworks = 'NimbbLib.framework'
+  s.source_files = 'Classes', "Vendor/NimbbLib.framework/Versions/A/Headers/*.h"
+  s.frameworks = 'UIKit'
+  s.ios.vendored_frameworks = 'Vendor/NimbbLib.framework'
+  s.xcconfig = {'GCC_PREPROCESSOR_DEFINITIONS' => %{$(inherited)}}
 end
