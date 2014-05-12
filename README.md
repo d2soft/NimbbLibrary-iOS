@@ -45,10 +45,10 @@ Before you start recording videos, you need to initialize the player using your 
   forceDev:NO 
   configurationCompletedHandler:^{
     NSLog(@"You're ready to record videos!");
-}
+  }
   configurationFailedHandler:^(NSError *error) {
     NSLog(@"oh no!");
-}];
+  }];
 ```
 
 When the player is initialized with success, you can start recording videos using only one method... and that's it!
@@ -58,16 +58,16 @@ When the player is initialized with success, you can start recording videos usin
   videoUploadProgressionHandler:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
     float percent = ((float)totalBytesWritten / (float)totalBytesExpectedToWrite);
     NSLog(@"Uploading video... %f / 100",percent*100.0f);
-}
+  }
   videoSavedHandler:^(NSString *nimbbVideoGuid) {
     NSLog(@"http://nimbb.com/v/%@", nimbbVideoGuid);
-} 
+  } 
   videoCanceledHandler:^{
     NSLog(@"Video canceled...");
-}
+  }
   captureFailedHandler:^(NSError *error) {
     NSLog(@"oh no!");
-}];
+  }];
 ```
 
 If you want to playback the video into your app, you need to call the [Nimbb Live/Play](http://nimbb.com/Doc/Dev/Service/Live/Play.aspx) service. Here's a sample code you could use:
