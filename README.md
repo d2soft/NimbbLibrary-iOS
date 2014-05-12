@@ -40,13 +40,14 @@ Before you start recording videos, you need to initialize the player using your 
 
 ```objective-c
 [NimbbPlayer initPlayerConfigurationUsingDeveloperPublicKey:@"YOURPUBLICKEY" 
-                                                videoLength:30 
-                                               videoQuality:NimbbPlayerQualityMedium 
-                                                   forceDev:NO 
-                               configurationCompletedHandler:^{
-  NSLog(@"You're ready to record videos!");
-}                                configurationFailedHandler:^(NSError *error) {
-  NSLog(@"oh no!");
+  videoLength:30 
+  videoQuality:NimbbPlayerQualityMedium 
+  forceDev:NO 
+  configurationCompletedHandler:^{
+    NSLog(@"You're ready to record videos!");
+}
+  configurationFailedHandler:^(NSError *error) {
+    NSLog(@"oh no!");
 }];
 ```
 
@@ -54,17 +55,18 @@ When the player is initialized with success, you can start recording videos usin
 
 ```objective-c
 [NimbbPlayer startCaptureVideoFromViewController:self
-                  videoUploadProgressionHandler:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-  float percent = ((float)totalBytesWritten / (float)totalBytesExpectedToWrite);
-  NSLog(@"Uploading video... %f / 100",percent*100.0f);
+  videoUploadProgressionHandler:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+    float percent = ((float)totalBytesWritten / (float)totalBytesExpectedToWrite);
+    NSLog(@"Uploading video... %f / 100",percent*100.0f);
 }
-                              videoSavedHandler:^(NSString *nimbbVideoGuid) {
-  NSLog(@"http://nimbb.com/v/%@", nimbbVideoGuid);
+  videoSavedHandler:^(NSString *nimbbVideoGuid) {
+    NSLog(@"http://nimbb.com/v/%@", nimbbVideoGuid);
 } 
-                            videoCanceledHandler:^{
-  NSLog(@"Video canceled...");
-}                          captureFailedHandler:^(NSError *error) {
-  NSLog(@"oh no!");
+  videoCanceledHandler:^{
+    NSLog(@"Video canceled...");
+}
+  captureFailedHandler:^(NSError *error) {
+    NSLog(@"oh no!");
 }];
 ```
 
