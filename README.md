@@ -42,7 +42,7 @@ Before you start recording videos, you need to initialize the player using your 
 [NimbbPlayer initPlayerConfigurationUsingDeveloperPublicKey:@"YOURPUBLICKEY" 
                                                 videoLength:30 
                                                videoQuality:NimbbPlayerQualityMedium 
-                                                   forceDev:YES 
+                                                   forceDev:NO 
                                configurationCompletedHandler:^{
   NSLog(@"You're ready to record videos!");
 }                                configurationFailedHandler:^(NSError *error) {
