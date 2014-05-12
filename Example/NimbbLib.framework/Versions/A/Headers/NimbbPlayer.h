@@ -19,10 +19,10 @@
 * length : restrict the video lenght of your users (can be overrided by the server if you set this value out of bound of your current plan)
 * videoQuality: nimbbPlayerQualityLow or NimbbPlayerQualityMedium (can be overrided by the server if you set this value out of bound of your current plan)
 * isForceDev: force dev mode. When set to true, you will have some debug logs from the lib (don't release your app with this flag set to true.)
-* completeBlock: block to be called if the player configuration is done successfully
+* completedBlock: block to be called if the player configuration is done successfully
 * failBlock: block to be called if the player configuration failed
 ************************************/
-+ (void)initPlayerConfigurationUsingDeveloperPublicKey:(NSString *)publicKey videoLength:(NSInteger)length videoQuality:(NimbbPlayerQuality)quality forceDev:(BOOL)isForceDev configurationCompleteHandler:(ConfigurationCompletedBlock)completeBlock configurationFailedHandler:(FailDetailsBlock)failBlock;
++ (void)initPlayerConfigurationUsingDeveloperPublicKey:(NSString *)publicKey videoLength:(NSInteger)length videoQuality:(NimbbPlayerQuality)quality forceDev:(BOOL)isForceDev configurationCompletedHandler:(ConfigurationCompletedBlock)completedBlock configurationFailedHandler:(FailDetailsBlock)failBlock;
 
 /************************************
 * startCaptureVideoFromViewController
@@ -34,7 +34,7 @@
 * videoCanceledBlock : block to be called if the user cancel the recording process
 * failBlock : block to be called if the upload process fail
 ************************************/
-+(void) startCaptureVideoFromViewController:(UIViewController*)controller videoUploadProgressionHandler:(VideoUploadProgressionBlock)videoUploadProgressionBlock videoSavedHandler:(VideoSavedBlock)videoSavedBlock videoCanceldHandler:(VideoWasCanceledBlock)videoCanceledBlock captureFailedHandler:(FailDetailsBlock)failBlock;
++(void)startCaptureVideoFromViewController:(UIViewController *)controller videoUploadProgressionHandler:(VideoUploadProgressionBlock)videoUploadProgressionBlock videoSavedHandler:(VideoSavedBlock)videoSavedBlock videoCanceledHandler:(VideoWasCanceledBlock)videoCanceledBlock captureFailedHandler:(FailDetailsBlock)failBlock;
 
 /************************************
 * Access the singleton if you

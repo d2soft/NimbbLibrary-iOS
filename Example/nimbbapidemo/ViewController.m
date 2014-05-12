@@ -28,7 +28,7 @@ NSString *kPublicKey = @"[ENTER YOUR KEY HERE]";
     [super viewWillAppear:animated];
     
     //Before doing anything with the API, you need to setup your account
-    [NimbbPlayer initPlayerConfigurationUsingDeveloperPublicKey:kPublicKey videoLength:30 videoQuality:NimbbPlayerQualityMedium forceDev:YES configurationCompleteHandler:^{
+    [NimbbPlayer initPlayerConfigurationUsingDeveloperPublicKey:kPublicKey videoLength:30 videoQuality:NimbbPlayerQualityMedium forceDev:YES configurationCompletedHandler:^{
         self.recordButton.enabled = YES;
         self.logTextView.text = @"Nimbb player is ready!";
         
@@ -46,7 +46,7 @@ NSString *kPublicKey = @"[ENTER YOUR KEY HERE]";
     } videoSavedHandler:^(NSString *nimbbVideoGuid) {
         self.videoUrlTextField.text = [NSString stringWithFormat:@"http://nimbb.com/v/%@", nimbbVideoGuid];
         self.logTextView.text = @"Upload done...";
-    } videoCanceldHandler:^{
+    } videoCanceledHandler:^{
         self.logTextView.text = @"Recording cancelled...";
     } captureFailedHandler:^(NSError *error) {
         self.logTextView.text = [NSString stringWithFormat:@"ERROR // Code: %li --- Details: %@", (long)error.code, error.localizedDescription];
