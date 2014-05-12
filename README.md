@@ -50,7 +50,7 @@ Before you start recording videos, you need to initialize the player using your 
 }];
 ```
 
-When the player is initialized with succes, you can start recording videos with this line of code... and that's it!
+When the player is initialized with success, you can start recording videos with this line of code... and that's it!
 
 ```objective-c
 [NimbbPlayer startCaptureVideoFromViewController:self
