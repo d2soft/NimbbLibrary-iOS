@@ -48,7 +48,8 @@ Before you start recording videos, you need to initialize the player using your 
   }
   configurationFailedHandler:^(NSError *error) {
     NSLog(@"oh no!");
-  }];
+  }
+];
 ```
 
 When the player is initialized with success, you can start recording videos using only one method... and that's it!
@@ -67,7 +68,8 @@ When the player is initialized with success, you can start recording videos usin
   }
   captureFailedHandler:^(NSError *error) {
     NSLog(@"oh no!");
-  }];
+  }
+];
 ```
 
 If you want to playback the video into your app, you need to call the [Nimbb Live/Play](http://nimbb.com/Doc/Dev/Service/Live/Play.aspx) service. Here's a sample code you could use:
