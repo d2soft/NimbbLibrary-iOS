@@ -53,7 +53,7 @@ Before you start recording videos, you need to initialize the player using your 
 When the player is initialized with succes, you can start recording videos with this line of code... and that's it!
 
 ```objective-c
-NimbbPlayer startCaptureVideoFromViewController:self
+[NimbbPlayer startCaptureVideoFromViewController:self
                   videoUploadProgressionHandler:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
   float percent = ((float)totalBytesWritten / (float)totalBytesExpectedToWrite);
   NSLog(@"Uploading video... %f / 100",percent*100.0f);
