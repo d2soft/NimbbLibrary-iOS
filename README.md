@@ -43,7 +43,7 @@ Before you start recording videos, you need to initialize the player using your 
                                                 videoLength:30 
                                                videoQuality:NimbbPlayerQualityMedium 
                                                    forceDev:YES 
-                               configurationCompleteHandler:^{
+                               configurationCompletedHandler:^{
   NSLog(@"You're ready to record videos!");
 }                                configurationFailedHandler:^(NSError *error) {
   NSLog(@"oh no!");
@@ -61,7 +61,7 @@ NimbbPlayer startCaptureVideoFromViewController:self
                               videoSavedHandler:^(NSString *nimbbVideoGuid) {
   NSLog(@"http://nimbb.com/v/%@", nimbbVideoGuid);
 } 
-                            videoCanceldHandler:^{
+                            videoCanceledHandler:^{
   NSLog(@"Video canceled...");
 }                          captureFailedHandler:^(NSError *error) {
   NSLog(@"oh no!");
