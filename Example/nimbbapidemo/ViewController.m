@@ -9,7 +9,7 @@
 #import <NimbbLib/NimbbPlayer.h>
 #import "ViewController.h"
 
-NSString *kPublicKey = @"c1e6c069cb";
+NSString *kPublicKey = @"[ENTER YOUR KEY HERE]";
 
 
 @interface ViewController ()
@@ -33,7 +33,7 @@ NSString *kPublicKey = @"c1e6c069cb";
         self.logTextView.text = @"Nimbb player is ready!";
         
     } configurationFailedHandler:^(NSError *error) {
-        self.logTextView.text = [NSString stringWithFormat:@"ERROR // Code: %i --- Details: %@", error.code, error.localizedDescription];
+        self.logTextView.text = [NSString stringWithFormat:@"ERROR // Code: %li --- Details: %@", (long)error.code, error.localizedDescription];
     }];
 }
 
@@ -49,7 +49,7 @@ NSString *kPublicKey = @"c1e6c069cb";
     } videoCanceldHandler:^{
         self.logTextView.text = @"Recording cancelled...";
     } captureFailedHandler:^(NSError *error) {
-        self.logTextView.text = [NSString stringWithFormat:@"ERROR // Code: %i --- Details: %@", error.code, error.localizedDescription];
+        self.logTextView.text = [NSString stringWithFormat:@"ERROR // Code: %li --- Details: %@", (long)error.code, error.localizedDescription];
     }];
 }
 
