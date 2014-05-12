@@ -50,7 +50,7 @@ Before you start recording videos, you need to initialize the player using your 
 }];
 ```
 
-When the player is initialized with success, you can start recording videos with this line of code... and that's it!
+When the player is initialized with success, you can start recording videos using only one method... and that's it!
 
 ```objective-c
 [NimbbPlayer startCaptureVideoFromViewController:self
@@ -66,4 +66,16 @@ When the player is initialized with success, you can start recording videos with
 }                          captureFailedHandler:^(NSError *error) {
   NSLog(@"oh no!");
 }];
+```
+
+If you want to playback the video into your app, you need to call the [Nimbb Live/Play](http://nimbb.com/Doc/Dev/Service/Live/Play.aspx) service. Here's a sample code you could use:
+
+```objective-c
+NSURL *url= [NSURL URLWithString:[NSString stringWithFormat:@"http://api.nimbb.com/Live/Play.aspx?guid=%@&key=%@", 
+                                           @"NIMBBVIDEOGUID", @"YOURPUBLICKEY"]];
+MPMoviePlayerController *moviePlayerController = [[MPMoviePlayerController alloc] initWithContentURL:url];
+moviePlayerController.controlStyle=MPMovieControlStyleDefault;
+moviePlayerController.shouldAutoplay=YES;
+[moviePlayerController setFullscreen:YES animated:YES];
+
 ```
