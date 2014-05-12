@@ -32,3 +32,38 @@ You need to add the following libraries in the Build Phases -> Link Binary With 
 ##### Build Settings
 - Add `/usr/include/libxml2` in Header Search Paths
 - Add `-ObjC` in Other Linker Flags
+
+
+##How to use it
+
+Before you start recording videos, you need to initialize the player using your personnal key from your [Nimbb.com account](http://nimbb.com/User/Dev/Key.aspx)
+
+```objective-c
+[NimbbPlayer initPlayerConfigurationUsingDeveloperPublicKey:@"YOURPUBLICKEY" 
+                                                videoLength:30 
+                                               videoQuality:NimbbPlayerQualityMedium 
+                                                   forceDev:YES 
+                               configurationCompleteHandler:^{
+  NSLog(@"You're ready to record videos!");
+}                                configurationFailedHandler:^(NSError *error) {
+  NSLog(@"oh no!");
+}];
+```
+
+When the player is initialized with succes, you can start recording videos with this line of code... and that's it!
+
+```objective-c
+NimbbPlayer startCaptureVideoFromViewController:self
+                  videoUploadProgressionHandler:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+  float percent = ((float)totalBytesWritten / (float)totalBytesExpectedToWrite);
+  NSLog(@"Uploading video... %f / 100",percent*100.0f);
+}
+                              videoSavedHandler:^(NSString *nimbbVideoGuid) {
+  NSLog(@"http://nimbb.com/v/%@", nimbbVideoGuid);
+} 
+                            videoCanceldHandler:^{
+  NSLog(@"Video canceled...");
+}                          captureFailedHandler:^(NSError *error) {
+  NSLog(@"oh no!");
+}];
+```
