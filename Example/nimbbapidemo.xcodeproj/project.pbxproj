@@ -395,12 +395,7 @@
 				);
 				INFOPLIST_FILE = "nimbbapidemo/nimbbapidemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Coding/Clients/D2Soft/NimbbLib/build/Debug-iphoneos",
-					"/Coding/Clients/D2Soft/NimbbLib/build/Debug-iphonesimulator",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/nimbbapidemo-egecmwinybvxkgamlnppgxitewyz/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -428,12 +423,7 @@
 				);
 				INFOPLIST_FILE = "nimbbapidemo/nimbbapidemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"/Coding/Clients/D2Soft/NimbbLib/build/Debug-iphoneos",
-					"/Coding/Clients/D2Soft/NimbbLib/build/Debug-iphonesimulator",
-					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/nimbbapidemo-egecmwinybvxkgamlnppgxitewyz/Build/Products/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
