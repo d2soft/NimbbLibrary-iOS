@@ -11,6 +11,7 @@ Easily integrate video recording using Nimbb into your iOS project.  [Nimbb](htt
 
 To use the Nimbb Library for iOS, first [create](http://nimbb.com/Account/Create.aspx) your Nimbb account.  A Silver (or higher) plan is required to be able to record or playback videos from iOS.  [Contact](http://nimbb.com/Help/) us to get a trial period.
 
+You also need to add an "iOS application" entry in your Nimbb's [Developer Settings](http://nimbb.com/User/Dev/Settings.aspx).  Specify the "Bundle ID" of your Xcode project.
 
 ##How to install it
 
@@ -87,3 +88,8 @@ moviePlayerController.shouldAutoplay=YES;
 [moviePlayerController setFullscreen:YES animated:YES];
 
 ```
+
+##Sample Project
+
+You can download and test the Example project.  Make sure to add the matching project Bundle ID into the [settings](http://nimbb.com/User/Dev/Settings.aspx) of your Nimbb account (select "iOS application").  Modify the value of kPublicKey in file ViewController.m to match your [public key](http://nimbb.com/User/Dev/Key.aspx).  Run on a physical device to record with the camera.
+
