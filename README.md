@@ -5,7 +5,11 @@
 NimbbLibrary-iOS
 ================
 
-Easily integrate video recording using Nimbb into your iOS project.
+Easily integrate video recording using Nimbb into your iOS project.  [Nimbb](http://nimbb.com) is a turn-key all-inclusive service in the cloud that offers all the features you need to record, host and playback user generated videos inside your projects.  All videos are stored on our servers so that you focus only on the client side.  Refer to our [Pricing](http://nimbb.com/Help/Subscriptions.aspx) page for a complete feature list and price.
+
+##Before you begin
+
+To use the Nimbb Library for iOS, first [create](http://nimbb.com/Account/Create.aspx) your Nimbb account.  A Silver (or higher) plan is required to be able to record or playback videos from iOS.  [Contact](http://nimbb.com/Help/) us to get a trial period.
 
 
 ##How to install it
@@ -36,7 +40,7 @@ You need to add the following libraries in the Build Phases -> Link Binary With 
 
 ##How to use it
 
-Before you start recording videos, you need to initialize the player using your personnal key from your [Nimbb.com account](http://nimbb.com/User/Dev/Key.aspx)
+Before you start recording videos, you need to initialize the player using your [developer key](http://nimbb.com/User/Dev/Key.aspx) from your Nimbb account.
 
 ```objective-c
 [NimbbPlayer initPlayerConfigurationUsingDeveloperPublicKey:@"YOURPUBLICKEY" 
@@ -72,7 +76,7 @@ When the player is initialized with success, you can start recording videos usin
 ];
 ```
 
-If you want to playback the video into your app, you need to call the [Nimbb Live/Play](http://nimbb.com/Doc/Dev/Service/Live/Play.aspx) service. Here's a sample code you could use:
+If you want to playback the video into your app, you need to call the  [Live/Play](http://nimbb.com/Doc/Dev/Service/Live/Play.aspx) function of the Nimbb service. Here's a sample code you could use:
 
 ```objective-c
 NSURL *url= [NSURL URLWithString:[NSString stringWithFormat:@"http://api.nimbb.com/Live/Play.aspx?guid=%@&key=%@", 
