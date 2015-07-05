@@ -4,7 +4,7 @@
 //
 //  Created by Olivier Lavoie on 2012-11-04.
 //  Copyright (c) 2012 D2Soft Technologies Inc. All rights reserved.
-//
+//  API : 1.3
 
 #import <UIKit/UIKit.h>
 #import "CustomDefinitions.h"
